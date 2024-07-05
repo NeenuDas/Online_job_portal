@@ -25,24 +25,25 @@ SECRET_KEY = 'django-insecure-l&)d^@v3ct(s-m_0wk(xyv&d175z07q1-06b$$(!-tzn3rk2&c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# if DEBUG:
-#     import mimetypes
-#     mimetypes.add_type("text/css", ".css", True)
+if DEBUG:
+    import mimetypes
+    mimetypes.add_type("text/css", ".css", True)
     
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Application definition
 
 INSTALLED_APPS = [
-    'userapp',
-    'jobapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'userapp',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,7 @@ ROOT_URLCONF = 'onlinejobs.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,19 +122,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-MEDIA_URL = '/media/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATIC_ROOT=os.path.join(BASE_DIR,'assets')
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

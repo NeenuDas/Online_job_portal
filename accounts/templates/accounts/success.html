@@ -1,0 +1,12 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 offset-sm-4">
+            <h1 class="text-center mt-5">Registration Successful</h1>
+            <p class="text-center mt-3">Thank you for registering! You can now <a href="{% url 'accounts:login' %}">login</a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock content %}

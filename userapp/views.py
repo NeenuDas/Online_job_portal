@@ -1,12 +1,25 @@
+from typing import Any
+from django.http import HttpRequest
+from django.http.response import HttpResponse as HttpResponse
 from django.shortcuts import render
-from django .http import HttpResponse
+from django.views.generic import TemplateView
 
 # Create your views here.
-def home(request):
-    return render(request, "home.html")
+class HomeView(TemplateView):
 
-def about(request):
-    return render(request, "about.html")
+    template_name = 'user/home_dashboard.html'
+    def get(self, request: HttpRequest, *args: Any, **kwargs: Any) -> HttpResponse:
+        return render(request, self.template_name)
 
-def index(request):
-    return render(request, "index.html")
+
+# from django.shortcuts import render,HttpResponse,redirect
+# from django.contrib.auth import authenticate,login
+
+
+# # Create your views here.
+# def home(request):
+#     return render(request, "user/home_dashboard.html")
+
+# def dashboard(request):
+#     return render(request, "layout/dashboard.html")
+# ``

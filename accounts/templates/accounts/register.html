@@ -1,0 +1,58 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4 offset-sm-4">
+            <h1 class="text-center mt-5">Register</h1>
+            
+            {% if messages %}
+                <div class="message_container">
+                    {% for message in messages %}
+                    <li style="font-size: 10px;" class="{{ message.tags }}">{{ message }}</li>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            
+            <form method="post">
+                {% csrf_token %}
+                
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        {{ form.first_name }}   
+                    </div>        
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        {{ form.last_name }}   
+                    </div>        
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        {{ form.email }}   
+                    </div>        
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        {{ form.username }}   
+                    </div>        
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        {{ form.password }}   
+                    </div>        
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        {{ form.confirm_password }}   
+                    </div>        
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                
+                <a href="{% url 'accounts:login' %}" class="btn btn-transparent btn-block mt-2 w-full">Login</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

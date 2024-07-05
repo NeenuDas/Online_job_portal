@@ -18,6 +18,7 @@
 
     <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
+   
     <!-- Favicon icon -->
     <link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon">
     <!-- Google font-->
@@ -30,10 +31,10 @@
     <!-- waves.css -->
     <link rel="stylesheet" href="{% static 'assets/pages/waves/css/waves.min.css' %}" type="text/css" media="all">
     <!-- themify icon -->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/icon/themify-icons/themify-icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/staticfiles/assets/icon/themify-icons/themify-icons.css' %}">
     <!-- font-awesome-n -->
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome-n.min.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/staticfiles/assets/css/font-awesome-n.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'static/staticfiles/assets/css/font-awesome.min.css' %}">
     <!-- scrollbar.css -->
     <link rel="stylesheet" type="text/css" href="{% static 'assets/css/jquery.mCustomScrollbar.css' %}">
     <!-- Style.css -->
@@ -125,7 +126,7 @@
                     <div class="navbar-container container-fluid">
                         <ul class="nav-left">
                             <li>
-                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                                <div class="sidebar_toggle"><a href=""><i class="ti-menu"></i></a></div>
                             </li>
                             <li>
                                 <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
@@ -261,14 +262,14 @@
                                 <li class="pcoded-hasmenu">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
-                                        <span class="pcoded-mtext">Basic</span>
+                                        <span class="pcoded-mtext">user</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class=" ">
-                                            <a href="breadcrumb.html" class="waves-effect waves-dark">
+                                            <a href="" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Breadcrumbs</span>
+                                                <span class="pcoded-mtext">login</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
@@ -378,7 +379,6 @@
                                     </a>
                                     <ul class="pcoded-submenu">
                                         <li class="">
-                                            <a href="{% url 'login' %}" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext">Login</span>
                                                 <span class="pcoded-mcaret"></span>
